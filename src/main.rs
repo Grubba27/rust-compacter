@@ -29,7 +29,7 @@ fn main() -> std::io::Result<()> {
     file.write_all(&file_text.as_ref())
 }
 
-fn zip_file(text: String, file_text: &mut String) {
+pub fn zip_file(text: String, file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace(" ", "1")
@@ -44,7 +44,7 @@ fn zip_file(text: String, file_text: &mut String) {
     }
 }
 
-fn unzip_file(text: String, file_text: &mut String) {
+pub fn unzip_file(text: String, file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace("0", "\n")
@@ -56,5 +56,31 @@ fn unzip_file(text: String, file_text: &mut String) {
             .replace("6", "ou")
             .replace("7", "est");
         file_text.push_str(&*compact);
+    }
+}
+
+
+#[cfg(test)]
+mod test_module {
+    use crate::{unzip_file, zip_file};
+
+    #[test]
+    pub fn zip_file_test() {
+        let mut file_text: String = String::from("");
+        let text = std::fs::read_to_string("src/text.txt").expect("File is wrong");
+        zip_file(text, &mut file_text);
+        assert_eq!(file_text, "Violet5121azuis0Ros5121vermelh50M41teclado1317á1funcionando0Ou1será1que141317612?0", "text.txt should look like this zip string");
+    }
+
+    #[test]
+    pub fn unzip_file_test() {
+        let mut file_text: String = String::from("");
+        let text = std::fs::read_to_string("src/zip.txt").expect("File is wrong");
+        unzip_file(text, &mut file_text);
+        assert_eq!(file_text, "Violetas são azuis
+Rosas são vermelhas
+Meu teclado não está funcionando
+Ou será que eu não estou são?
+", "Text should always look like this string")
     }
 }
