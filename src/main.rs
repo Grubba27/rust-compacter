@@ -11,15 +11,26 @@ struct Args {
 }
 
 
-fn main() {
+fn main() -> std::io::Result<()> {
     let args: Args = Args::parse();
-    if args.command == "zip" { zip_file(&args); }
-    if args.command == "unzip" { unzip_file(&args); }
+
+    let mut file_text: String = String::from("");
+    let text = std::fs::read_to_string(&args.path).expect("File is wrong");
+
+    if args.command == "zip" {
+        zip_file(text, &mut file_text);
+    } else if args.command == "unzip" {
+        unzip_file(text, &mut file_text);
+    }
+
+
+    let file_path = format!("src/{}.txt", args.command);
+    let mut file = File::create(file_path)?;
+    file.write_all(&file_text.as_ref());
+    Ok(())
 }
 
-fn zip_file(args: &Args) -> std::io::Result<()> {
-    let text = std::fs::read_to_string(&args.path).expect("File is wrong");
-    let mut file_text: String = String::from("");
+fn zip_file(text: String, mut file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace(" ", "1")
@@ -32,14 +43,9 @@ fn zip_file(args: &Args) -> std::io::Result<()> {
         let result = compact + "0";
         file_text.push_str(&*result);
     }
-    let mut file = File::create("src/zip.txt")?;
-    file.write_all(file_text.as_ref());
-    Ok(())
 }
 
-fn unzip_file(args: &Args) -> std::io::Result<()> {
-    let text = std::fs::read_to_string(&args.path).expect("File is wrong");
-    let mut file_text: String = String::from("");
+fn unzip_file(text: String, mut file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace("0", "\n")
@@ -52,7 +58,4 @@ fn unzip_file(args: &Args) -> std::io::Result<()> {
             .replace("7", "est");
         file_text.push_str(&*compact);
     }
-    let mut file = File::create("src/unzip.txt")?;
-    file.write_all(file_text.as_ref());
-    Ok(())
 }
