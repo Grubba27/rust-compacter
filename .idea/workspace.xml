@@ -7,7 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6baa1ba-a9ed-45df-82fe-baa1cfbeed88" name="Changes" comment="added">
+    <list default="true" id="c6baa1ba-a9ed-45df-82fe-baa1cfbeed88" name="Changes" comment="Adjusted Functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -89,7 +89,7 @@
       <workItem from="1642356327301" duration="6026000" />
       <workItem from="1642363474153" duration="50000" />
       <workItem from="1642363557319" duration="80000" />
-      <workItem from="1642450913049" duration="884000" />
+      <workItem from="1642450913049" duration="2113000" />
     </task>
     <task id="LOCAL-00001" summary="added">
       <created>1642362016995</created>
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642362016995</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adjusted Functions">
+      <created>1642454781737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642454781737</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
+    <MESSAGE value="Adjusted Functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Functions" />
   </component>
 </project>

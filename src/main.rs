@@ -26,11 +26,10 @@ fn main() -> std::io::Result<()> {
 
     let file_path = format!("src/{}.txt", args.command);
     let mut file = File::create(file_path)?;
-    file.write_all(&file_text.as_ref());
-    Ok(())
+    file.write_all(&file_text.as_ref())
 }
 
-fn zip_file(text: String, mut file_text: &mut String) {
+fn zip_file(text: String, file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace(" ", "1")
@@ -45,7 +44,7 @@ fn zip_file(text: String, mut file_text: &mut String) {
     }
 }
 
-fn unzip_file(text: String, mut file_text: &mut String) {
+fn unzip_file(text: String, file_text: &mut String) {
     for line in text.lines() {
         let compact = line
             .replace("0", "\n")
