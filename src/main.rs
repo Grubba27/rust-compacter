@@ -17,13 +17,12 @@ fn main() -> std::io::Result<()> {
     let mut file_text: String = String::from("");
     let text = std::fs::read_to_string(&args.path).expect("File is wrong");
 
-    if args.command == "zip" {
-        zip_file(text, &mut file_text);
-    } else if args.command == "unzip" {
-        unzip_file(text, &mut file_text);
+
+    match args.command.as_str() {
+        "zip" => zip_file(text, &mut file_text),
+        "unzip" => unzip_file(text, &mut file_text),
+        _ => {}
     }
-
-
     let file_path = format!("src/{}.txt", args.command);
     let mut file = File::create(file_path)?;
     file.write_all(&file_text.as_ref())

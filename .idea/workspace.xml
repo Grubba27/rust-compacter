@@ -7,8 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6baa1ba-a9ed-45df-82fe-baa1cfbeed88" name="Changes" comment="Adjusted params">
+    <list default="true" id="c6baa1ba-a9ed-45df-82fe-baa1cfbeed88" name="Changes" comment="Added tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
     <property name="org.rust.hideNoCargoProjectNotifications/Users/gabrielgrubba/Desktop/projetos/rust-compacter/src/main.rs" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cargo.Test test_module::unzip_file_test">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package rust-compacter --bin rust-compacter" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -72,6 +73,44 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test test_module::unzip_file_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package rust-compacter --bin rust-compacter test_module::unzip_file_test -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test_module::zip_file_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package rust-compacter --bin rust-compacter test_module::zip_file_test -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test test_module::unzip_file_test" />
+        <item itemvalue="Cargo.Test test_module::zip_file_test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="/usr/local/bin" />
@@ -88,7 +127,8 @@
       <workItem from="1642356327301" duration="6026000" />
       <workItem from="1642363474153" duration="50000" />
       <workItem from="1642363557319" duration="80000" />
-      <workItem from="1642450913049" duration="4222000" />
+      <workItem from="1642450913049" duration="4830000" />
+      <workItem from="1642546466514" duration="212000" />
     </task>
     <task id="LOCAL-00001" summary="added">
       <created>1642362016995</created>
@@ -111,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642455752405</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added tests">
+      <created>1642458620353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642458620353</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +180,7 @@
     <MESSAGE value="added" />
     <MESSAGE value="Adjusted Functions" />
     <MESSAGE value="Adjusted params" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted params" />
+    <MESSAGE value="Added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests" />
   </component>
 </project>
